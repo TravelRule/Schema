@@ -4,7 +4,10 @@
   "description": "Shared IVMS101-style JSON schemas and status enums used across the travel-rule toolkit repos.",
   "type": "module",
   "main": "index.js",
-  "files": ["schemas", "index.js"],
+  "files": [
+    "schemas",
+    "index.js"
+  ],
   "scripts": {
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",

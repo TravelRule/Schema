@@ -13,13 +13,13 @@ npm install
 
 ## Scripts
 
-| Command | Description |
-|---|---|
-| `npm run lint` | Run ESLint |
-| `npm run lint:fix` | Auto-fix lint issues |
-| `npm run format` | Format code with Prettier |
+| Command                | Description                      |
+| ---------------------- | -------------------------------- |
+| `npm run lint`         | Run ESLint                       |
+| `npm run lint:fix`     | Auto-fix lint issues             |
+| `npm run format`       | Format code with Prettier        |
 | `npm run format:check` | Check formatting without writing |
-| `npm test` | Run tests |
+| `npm test`             | Run tests                        |
 
 ## Adding or Changing Schemas
 

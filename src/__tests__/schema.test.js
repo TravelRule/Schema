@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { travelRuleMessageSchema, screeningStatusSchema } from "../index.js";
+import { travelRuleMessageSchema, screeningStatusSchema } from "../../index.js";
 
 test("travelRuleMessageSchema is a valid JSON Schema object", () => {
   assert.equal(typeof travelRuleMessageSchema, "object");
