@@ -1,0 +1,8 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://travel-rule-toolkit/schemas/screening-status.json",
+  "title": "ScreeningStatus",
+  "description": "Mirrors the on-chain ScreeningStatus enum in the attestation-registry contract. Keep this in sync with that contract's src/lib.rs if the enum ever changes.",
+  "type": "string",
+  "enum": ["clear", "flagged", "pending"]
+}

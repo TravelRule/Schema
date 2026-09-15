@@ -1,0 +1,54 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://travel-rule-toolkit/schemas/travel-rule-message.json",
+  "title": "TravelRuleMessage",
+  "description": "Reference subset of an IVMS101-style travel-rule message for anchor-to-anchor transfers. Institution-level fields only in this version — no end-user PII. See the api repo's docs/IVMS101_MAPPING.md for what's implemented vs. a full spec.",
+  "type": "object",
+  "required": ["originatorInstitution", "beneficiaryInstitution", "paymentReference"],
+  "properties": {
+    "originatorInstitution": { "$ref": "#/definitions/institution" },
+    "beneficiaryInstitution": { "$ref": "#/definitions/institution" },
+    "paymentReference": {
+      "type": "string",
+      "description": "Pointer to the on-chain payment this message accompanies (e.g. a Stellar transaction hash).",
+      "minLength": 1,
+      "maxLength": 128
+    },
+    "amount": {
+      "type": "string",
+      "description": "Transfer amount, as a string to avoid floating-point precision issues."
+    },
+    "asset": {
+      "type": "string",
+      "description": "Asset code, e.g. USDC, EURC, MGUSD."
+    },
+    "createdAt": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "definitions": {
+    "institution": {
+      "type": "object",
+      "required": ["name", "lei"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Legal name of the originating/beneficiary institution (anchor), not an end user."
+        },
+        "lei": {
+          "type": "string",
+          "description": "Legal Entity Identifier, if available. Reference version does not validate against the real LEI registry.",
+          "minLength": 20,
+          "maxLength": 20
+        },
+        "country": {
+          "type": "string",
+          "description": "ISO 3166-1 alpha-2 country code."
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}
